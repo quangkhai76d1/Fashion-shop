@@ -101,17 +101,6 @@
       }
       &__btn {
         overflow: hidden;
-        button {
-          background-color: $main-color;
-          padding: 1.2rem 1.5rem;
-          border-radius: 2rem;
-          outline: none;
-          border: none;
-          cursor: pointer;
-          font-size: 1.2rem;
-          background-color: $main-color;
-          color: #fff;
-        }
       }
       &__title > span,
       &__desc > span,
