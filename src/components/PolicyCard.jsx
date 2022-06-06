@@ -3,26 +3,22 @@ import PropTypes from "prop-types";
 
 const PolicyCard = (props) => {
   return (
-    <div className='policy__card'>
-      <div className='policy__card__icon'>
+    <div className='policy-card'>
+      <div className='policy-card__icon'>
         <i className={props.icon}></i>
       </div>
-      <div className='policy__card__info'>
-        <div className='policy__card__info--name'>
-          <p>{props.name}</p>
-        </div>
-        <div className='policy__card__info--desc'>
-          <p>{props.desc}</p>
-        </div>
+      <div className='policy-card__info'>
+        <div className='policy-card__info__name'>{props.name}</div>
+        <div className='policy-card__info__desc'>{props.desc}</div>
       </div>
     </div>
   );
 };
 
 PolicyCard.propTypes = {
-  name: PropTypes.string,
-  desc: PropTypes.string,
-  icon: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
 };
 
 export default PolicyCard;

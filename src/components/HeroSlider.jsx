@@ -45,7 +45,7 @@ const HeroSlider = (props) => {
       {props.control ? (
         <div className='hero-slider__control'>
           <div className='hero-slider__control__item' onClick={prevSlide}>
-            <i class='bx bx-chevron-left'></i>
+            <i className='bx bx-chevron-left'></i>
           </div>
           <div className='hero-slider__control__item'>
             <div className='index'>
@@ -53,7 +53,7 @@ const HeroSlider = (props) => {
             </div>
           </div>
           <div className='hero-slider__control__item' onClick={nextSlide}>
-            <i class='bx bx-chevron-right'></i>
+            <i className='bx bx-chevron-right'></i>
           </div>
         </div>
       ) : null}
