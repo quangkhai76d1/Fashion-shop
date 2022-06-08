@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -20,6 +20,8 @@ import Section, { SectionBody } from "../components/Section";
 import banner from "../assets/images/banner-2.png";
 
 const Catalog = () => {
+  const refWidget = useRef(null);
+
   const productList = productData.getAllProducts();
 
   const [products, setProducts] = useState(productList);
@@ -105,6 +107,7 @@ const Catalog = () => {
     updateProducts();
   }, [updateProducts]);
 
+  const showFilterWidget = () => refWidget.current.classList.toggle("active");
   return (
     <Helmet title='Sản phẩm'>
       {/* {console.log(filters, products)} */}
@@ -133,7 +136,10 @@ const Catalog = () => {
       </Section>
 
       <div className='catalog'>
-        <div className='catalog__filter'>
+        <div className='catalog__filter' ref={refWidget}>
+          <div className='catalog__filter__close' onClick={showFilterWidget}>
+            <i class='bx bx-arrow-back'></i>
+          </div>
           <div className='catalog__filter__widget'>
             <div className='catalog__filter__widget--title'>
               Danh mục sản phẩm
@@ -203,7 +209,11 @@ const Catalog = () => {
             </div>
           </div>
         </div>
-
+        <div className='catalog__filter__toggle'>
+          <Button size='sm' onClick={showFilterWidget}>
+            Bộ lọc
+          </Button>
+        </div>
         <div className='catalog__content'>
           <InfinityList data={products} />
         </div>
