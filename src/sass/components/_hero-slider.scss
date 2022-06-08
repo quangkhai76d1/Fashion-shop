@@ -42,7 +42,7 @@
     }
 
     @include mobile {
-      padding-top: 12rem;
+      padding-top: $header-mobile-height;
       padding-bottom: 40px;
     }
 
@@ -66,7 +66,7 @@
 
       &__title,
       &__desc {
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         @include tablet {
           margin-bottom: 15px;
         }
@@ -74,14 +74,13 @@
       &__title {
         font-family: "M PLUS Rounded 1c", sans-serif;
         font-weight: 600;
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         line-height: 6.75rem;
         overflow: hidden;
-        @include tablet {
-          font-size: 3rem;
-        }
+
         @include mobile {
-          font-size: 1.5rem;
+          font-size: 2.5rem;
+          line-height: 3.75rem;
         }
       }
       &__desc {
@@ -89,14 +88,10 @@
         color: $txt-second-color;
         font-size: 1.5rem;
         line-height: 2.25rem;
-        @include tablet {
-          font-size: 1.2rem;
-          line-height: 1.8rem;
-        }
 
         @include mobile {
           font-size: 1rem;
-          line-height: 1.2rem;
+          line-height: 1.5rem;
         }
       }
       &__btn {

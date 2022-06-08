@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import Helmet from "../components/Helmet";
 import Grid from "../components/Grid";
-import ProductCard from "../components/ProductCard";
+import InfinityList from "../components/InfinityList";
 import CheckBox from "../components/CheckBox";
 import Button from "../components/Button";
 import PolicyCard from "../components/PolicyCard";
@@ -205,18 +205,7 @@ const Catalog = () => {
         </div>
 
         <div className='catalog__content'>
-          <Grid col={3} mdCol={2} smCol={1} gap={20}>
-            {products.map((item, index) => (
-              <ProductCard
-                key={index}
-                img01={item.image01}
-                img02={item.image02}
-                name={item.title}
-                price={Number(item.price)}
-                slug={item.slug}
-              />
-            ))}
-          </Grid>
+          <InfinityList data={products} />
         </div>
       </div>
     </Helmet>

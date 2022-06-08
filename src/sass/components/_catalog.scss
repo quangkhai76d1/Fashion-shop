@@ -1,8 +1,13 @@
 .catalog {
   @include flex(flex-start, flex-start);
 
+  @include tablet {
+    flex-direction: column;
+  }
+
   &__filter {
     width: 20%;
+
     @include tablet {
       width: unset;
     }
