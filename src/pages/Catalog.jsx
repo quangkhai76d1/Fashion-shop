@@ -70,6 +70,10 @@ const Catalog = () => {
     }
   };
 
+  const clearFilter = () => {
+    setFilters(initFilter);
+  };
+
   const updateProducts = useCallback(() => {
     let temp = productList;
 
@@ -145,6 +149,7 @@ const Catalog = () => {
                     onChange={(input) =>
                       filterProduct("CATEGORY", input.checked, item)
                     }
+                    checked={filters.category.includes(item.categorySlug)}
                   />
                 </div>
               ))}
@@ -164,6 +169,7 @@ const Catalog = () => {
                     onChange={(input) =>
                       filterProduct("COLOR", input.checked, item)
                     }
+                    checked={filters.color.includes(item.color)}
                   />
                 </div>
               ))}
@@ -183,6 +189,7 @@ const Catalog = () => {
                     onChange={(input) =>
                       filterProduct("SIZE", input.checked, item)
                     }
+                    checked={filters.size.includes(item.size)}
                   />
                 </div>
               ))}
@@ -190,7 +197,9 @@ const Catalog = () => {
           </div>
           <div className='catalog__filter__widget'>
             <div className='catalog__filter__widget--content'>
-              <Button size='sm'>Xoá bộ lọc</Button>
+              <Button size='sm' onClick={clearFilter}>
+                Xoá bộ lọc
+              </Button>
             </div>
           </div>
         </div>
