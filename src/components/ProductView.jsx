@@ -77,7 +77,7 @@ const ProductView = (props) => {
         </div>
       </div>
 
-      <div className='product__info'>
+      <div className='product__info '>
         <h1 className='product__info__title'>{product.title}</h1>
 
         <div className='product__info__item'>
@@ -146,6 +146,19 @@ const ProductView = (props) => {
         <div className='product__info__item'>
           <Button onClick={addToCart}>Thêm vào giỏ hàng</Button>
           <Button onClick={goToCart}>Mua ngay</Button>
+        </div>
+      </div>
+
+      <div className={`product-desc mobile ${showContent ? "expand" : ""}`}>
+        <div className='product-desc__title'>Chi tiết sản phẩm</div>
+        <div
+          className='product-desc__content'
+          dangerouslySetInnerHTML={{ __html: product.description }}
+        ></div>
+        <div className='product-desc__toggle'>
+          <Button size='sm' onClick={() => setShowContent(!showContent)}>
+            {!showContent ? "Xem thêm" : "Thu gọn"}
+          </Button>
         </div>
       </div>
     </div>
