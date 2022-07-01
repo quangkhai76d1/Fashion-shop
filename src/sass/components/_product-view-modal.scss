@@ -1,0 +1,39 @@
+.product-view-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  padding-top: 100px;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__content {
+    margin: auto;
+    width: 50%;
+    position: relative;
+    background-color: $main-bg;
+    padding: 2rem;
+    transform: translateY(-250px);
+    transition: transform 0.3s ease;
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      button {
+        border-radius: 0;
+      }
+    }
+  }
+  &.active &__content {
+    transform: translateY(0);
+  }
+}

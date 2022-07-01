@@ -3,8 +3,21 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 import { withRouter } from "react-router";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/shopping-cart/cartItemsSlice";
+
 const ProductView = (props) => {
-  const product = props.product;
+  const dispatch = useDispatch();
+
+  let product = props.product;
+
+  if (product === undefined)
+    product = {
+      price: 0,
+      title: "",
+      colors: [],
+      size: [],
+    };
 
   const [imageView, setImageView] = useState(product.image01);
 
@@ -36,10 +49,30 @@ const ProductView = (props) => {
   };
 
   const addToCart = () => {
-    if (check()) console.log({ color, size, quantity });
+    if (check()) {
+      dispatch(
+        addItem({
+          slug: product.slug,
+          color: color,
+          size: size,
+          quantity: quantity,
+          price: product.price,
+        })
+      );
+      alert("Sucess");
+    }
   };
 
   const goToCart = () => {
+    dispatch(
+      addItem({
+        slug: product.slug,
+        color: color,
+        size: size,
+        quantity: quantity,
+        price: product.price,
+      })
+    );
     if (check()) props.history.push("/cart");
   };
   return (
@@ -166,7 +199,7 @@ const ProductView = (props) => {
 };
 
 ProductView.propTypes = {
-  product: PropTypes.object.isRequired,
+  product: PropTypes.object,
 };
 
 export default withRouter(ProductView);

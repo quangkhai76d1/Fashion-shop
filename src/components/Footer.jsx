@@ -90,11 +90,6 @@ const Footer = () => {
           </div>
 
           <div className='footer__about'>
-            <p>
-              <Link to='/'>
-                <img src={logo} alt='KhaiShop' className='footer__logo' />
-              </Link>
-            </p>
             <div className='footer__content'>
               <p>
                 Hướng đến mục tiêu đáp ứng thời trang mỗi ngày của mọi người.
