@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo-2.png";
+import { useSelector } from "react-redux";
 
 const mainNav = [
   {
@@ -11,10 +12,7 @@ const mainNav = [
     display: "Sản phẩm",
     path: "/catalog",
   },
-  {
-    display: "Phụ kiện",
-    path: "/accessories",
-  },
+
   {
     display: "Liên hệ",
     path: "/contact",
@@ -26,6 +24,13 @@ const Header = () => {
   const activeNav = mainNav.findIndex((e) => e.path === pathname);
   const headerRef = useRef(null);
 
+  const cartItems = useSelector((state) => state.cartItems.value);
+  const [totalProduct, setTotalProduct] = useState(0);
+  useEffect(() => {
+    setTotalProduct(
+      cartItems.reduce((total, item) => total + Number(item.quantity), 0)
+    );
+  }, [cartItems]);
   //shrink nav
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -91,7 +96,8 @@ const Header = () => {
             </div>
             <div className='header__menu__item header__menu__right__item'>
               <Link to='/cart'>
-                <i className='bx bxs-cart-alt'></i>
+                <i className='bx bxs-cart-alt icon'></i>
+                <span className='bag'>{Number(totalProduct)}</span>
               </Link>
             </div>
             <div className='header__menu__item header__menu__right__item'>

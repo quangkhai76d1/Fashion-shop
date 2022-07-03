@@ -59,7 +59,7 @@ const ProductView = (props) => {
           price: product.price,
         })
       );
-      alert("Sucess");
+      alert("Thêm vào giỏ hàng thành công");
     }
   };
 

@@ -11,7 +11,6 @@ const ProductViewModal = () => {
   const productSlug = useSelector((state) => {
     return state.productModal.value;
   });
-  console.log({ productSlug });
 
   const [product, setProduct] = useState(undefined);
 

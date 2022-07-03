@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/images/logo-1.png";
 import { Link } from "react-router-dom";
 
 import Grid from "./Grid";

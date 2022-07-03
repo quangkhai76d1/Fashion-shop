@@ -58,13 +58,18 @@
     }
 
     &__item.active {
-      font-weight: 600;
-      color: $txt-second-color;
+      // font-weight: 600;
+      color: #b3b3b3;
     }
 
     &__item:hover {
-      color: $txt-second-color;
+      color: #b3b3b3;
     }
+
+    a:hover {
+      color: #b3b3b3;
+    }
+
     &__left,
     &__right {
       @include flex(center, center);
@@ -113,6 +118,15 @@
         @include flex(center, center);
         @include tablet {
           margin-left: 10px;
+        }
+        .bag {
+          font-size: 1.5rem;
+          position: relative;
+          top: -12px;
+          left: -2px;
+          @include mobile {
+            font-size: 1rem;
+          }
         }
       }
 

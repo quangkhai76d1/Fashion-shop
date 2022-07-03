@@ -11,6 +11,7 @@ import CartItem from "../components/CartItem";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartItems.value);
+  console.log(cartItems);
   console.log(productData.getCartItemsInfo(cartItems));
 
   const [cartProducts, setCartProducts] = useState([]);
