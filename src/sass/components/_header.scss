@@ -93,6 +93,7 @@
         justify-content: flex-start;
         padding-top: 3rem;
         transform: translateX(-100%);
+        z-index: 50;
 
         &.active {
           transform: translateX(0);
@@ -124,6 +125,7 @@
           position: relative;
           top: -12px;
           left: -2px;
+          z-index: 5;
           @include mobile {
             font-size: 1rem;
           }

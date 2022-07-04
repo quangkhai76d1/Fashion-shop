@@ -17,7 +17,8 @@ import size from "../assets/fake-data/product-size";
 
 import Section, { SectionBody } from "../components/Section";
 
-import banner from "../assets/images/banner-2.png";
+import ImageSlider from "../components/ImageSlider";
+import sliderData from "../assets/fake-data/sliderdata";
 
 const Catalog = () => {
   const refWidget = useRef(null);
@@ -99,7 +100,6 @@ const Catalog = () => {
       });
     }
 
-    console.log(temp);
     setProducts(temp);
   }, [filters, productList]);
 
@@ -111,13 +111,8 @@ const Catalog = () => {
   return (
     <Helmet title='Sản phẩm'>
       {/* {console.log(filters, products)} */}
-      <Section>
-        <SectionBody>
-          <Link to='/catalog'>
-            <img src={banner} alt='' />
-          </Link>
-        </SectionBody>
-      </Section>
+
+      <ImageSlider slides={sliderData} auto={false} timeOuts={5000} />
 
       <Section>
         <SectionBody>
