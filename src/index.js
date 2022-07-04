@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import "./assets/boxicons-2.0.7/css/boxicons.min.css";
 import "./sass/index.scss";
 
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 
 import store from "./redux/store";
 import { Provider } from "react-redux";

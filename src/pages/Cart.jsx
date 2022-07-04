@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Helmet from "../components/Helmet";
-import Section, { SectionBody, SectionTitle } from "../components/Section";
-import Grid from "../components/Grid";
-import ProductCard from "../components/ProductCard";
+import Helmet from "../components/common/Helmet";
+import Section, {
+  SectionBody,
+  SectionTitle,
+} from "../components/common/Section";
+import Grid from "../components/common/Grid";
+import ProductCard from "../components/Product/ProductCard";
 import { useSelector } from "react-redux";
 import productData from "../assets/fake-data/products";
-import Button from "../components/Button";
+import Button from "../components/common/Button";
 import { Link } from "react-router-dom";
-import CartItem from "../components/CartItem";
+import CartItem from "../components/Cart/CartItem";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartItems.value);
-  console.log(cartItems);
-  console.log(productData.getCartItemsInfo(cartItems));
 
   const [cartProducts, setCartProducts] = useState([]);
   const [totalProduct, setTotalProduct] = useState(0);

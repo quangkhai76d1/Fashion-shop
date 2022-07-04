@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-import Grid from "./Grid";
-import ProductCard from "./ProductCard";
+import Grid from "../common/Grid";
+import ProductCard from "../Product/ProductCard";
 
 const InfinityList = (props) => {
   const perLoad = 6; // items each load
@@ -27,7 +27,6 @@ const InfinityList = (props) => {
           window.scrollY + window.innerHeight >=
           listRef.current.clientHeight + listRef.current.offsetTop + 200
         ) {
-          console.log("bottom reach");
           setLoad(true);
         }
       }

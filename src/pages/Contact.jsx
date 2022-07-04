@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
-import Helmet from "../components/Helmet";
+import Helmet from "../components/common/Helmet";
 import emailjs from "@emailjs/browser";
 import productData from "../assets/fake-data/products";
-import Section, { SectionTitle, SectionBody } from "../components/Section";
-import ProductCard from "../components/ProductCard";
-import Grid from "../components/Grid";
+import Section, {
+  SectionBody,
+  SectionTitle,
+} from "../components/common/Section";
+import ProductCard from "../components/Product/ProductCard";
+import Grid from "../components/common/Grid";
 
 const Contact = () => {
   const refForm = useRef();

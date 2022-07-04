@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { updateItem, removeItem } from "../redux/shopping-cart/cartItemsSlice";
+import {
+  updateItem,
+  removeItem,
+} from "../../redux/shopping-cart/cartItemsSlice";
 
 const CartItem = (props) => {
   const dispatch = useDispatch();

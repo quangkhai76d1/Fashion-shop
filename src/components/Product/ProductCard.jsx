@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import Button from "../common/Button";
 import { useDispatch } from "react-redux";
-import { set } from "../redux/product-modal/ProductModalSilce";
+import { set } from "../../redux/product-modal/ProductModalSilce";
 
 const ProductCard = (props) => {
   const dispatch = useDispatch();

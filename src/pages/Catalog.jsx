@@ -2,12 +2,12 @@ import React, { useCallback, useState, useEffect, useRef } from "react";
 
 import { Link } from "react-router-dom";
 
-import Helmet from "../components/Helmet";
-import Grid from "../components/Grid";
-import InfinityList from "../components/InfinityList";
-import CheckBox from "../components/CheckBox";
-import Button from "../components/Button";
-import PolicyCard from "../components/PolicyCard";
+import Helmet from "../components/common/Helmet";
+import Grid from "../components/common/Grid";
+import InfinityList from "../components/Infinity/InfinityList";
+import CheckBox from "../components/common/CheckBox";
+import Button from "../components/common/Button";
+import PolicyCard from "../components/Policy/PolicyCard";
 
 import productData from "../assets/fake-data/products";
 import category from "../assets/fake-data/category";
@@ -15,9 +15,9 @@ import colors from "../assets/fake-data/product-color";
 import policy from "../assets/fake-data/policy";
 import size from "../assets/fake-data/product-size";
 
-import Section, { SectionBody } from "../components/Section";
+import Section, { SectionBody } from "../components/common/Section";
 
-import ImageSlider from "../components/ImageSlider";
+import ImageSlider from "../components/Slider/ImageSlider";
 import sliderData from "../assets/fake-data/sliderdata";
 
 const Catalog = () => {
@@ -87,7 +87,7 @@ const Catalog = () => {
     if (filters.color.length > 0) {
       temp = temp.filter((e) => {
         const check = e.colors.find((color) => filters.color.includes(color));
-        console.log(check);
+
         return check !== undefined;
       });
     }
@@ -95,7 +95,6 @@ const Catalog = () => {
     if (filters.size.length > 0) {
       temp = temp.filter((e) => {
         const check = e.size.find((size) => filters.size.includes(size));
-        console.log(check);
         return check !== undefined;
       });
     }

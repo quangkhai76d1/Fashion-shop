@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Button from "./Button";
+import Button from "../common/Button";
 import { withRouter } from "react-router";
 
 import { useDispatch } from "react-redux";
-import { addItem } from "../redux/shopping-cart/cartItemsSlice";
+import { addItem } from "../../redux/shopping-cart/cartItemsSlice";
 
 const ProductView = (props) => {
   const dispatch = useDispatch();

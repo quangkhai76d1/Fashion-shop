@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import productData from "../assets/fake-data/products";
-import { remove } from "../redux/product-modal/ProductModalSilce";
-import Button from "./Button";
+import productData from "../../assets/fake-data/products";
+import { remove } from "../../redux/product-modal/ProductModalSilce";
+import Button from "../common/Button";
 import ProductView from "./ProductView";
 
 const ProductViewModal = () => {
