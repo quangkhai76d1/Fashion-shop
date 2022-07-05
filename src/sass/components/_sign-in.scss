@@ -1,0 +1,14 @@
+.sign-in {
+  text-align: center;
+  font-size: 1.8rem;
+  color: $txt-second-color;
+  padding: 4rem;
+  box-shadow: $box-shadow;
+  width: 60%;
+  margin: auto;
+  border-radius: 2rem;
+  h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+}

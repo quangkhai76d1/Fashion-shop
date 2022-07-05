@@ -74,12 +74,12 @@
     &__right {
       @include flex(center, center);
       height: $header-height;
+      cursor: pointer;
     }
 
     &__left {
       &__close {
         display: none;
-        cursor: pointer;
       }
 
       @include tablet {
