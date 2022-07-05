@@ -5,8 +5,6 @@ const items =
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
 
-console.log(items);
-
 const initialState = { value: items };
 
 export const cartItemsSlice = createSlice({
@@ -42,7 +40,6 @@ export const cartItemsSlice = createSlice({
         ];
       }
       localStorage.setItem("cartItems", JSON.stringify(sortItem(state.value)));
-      console.log(state.value);
     },
 
     updateItem: (state, action) => {

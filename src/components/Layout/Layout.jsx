@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -19,8 +19,6 @@ const config = {
 firebase.initializeApp(config);
 
 const Layout = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false);
-
   //Handle firebase
 
   useEffect(() => {

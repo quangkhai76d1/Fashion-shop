@@ -20,6 +20,4 @@ const Signin = () => {
   );
 };
 
-Signin.propTypes = {};
-
 export default Signin;
