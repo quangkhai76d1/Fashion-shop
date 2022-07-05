@@ -36,7 +36,7 @@ const Home = () => {
         <SectionBody>
           <Grid col={4} mdCol={2} smCol={1} gap={20}>
             {policy.map((item, index) => (
-              <Link key={index} to='/policy'>
+              <Link key={index} to='/contact'>
                 <PolicyCard
                   name={item.name}
                   icon={item.icon}
